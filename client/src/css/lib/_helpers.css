@@ -1,0 +1,61 @@
+#root-div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
+body, html {
+overflow:hidden
+!important;
+}
+
+
+.flex-center {
+	display: flex;
+	flex-direction: row;
+	/* Cross axis align */
+	align-items: center;
+	/* or we can use Main axis align */
+	justify-content: center;
+
+}
+
+
+.container {
+	max-width: var(--container-width-desktop-large);
+	position: relative;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1281px) {
+	.container {
+		min-width: var(--container-width-desktop-large);
+		max-width: var(--container-width-desktop-large);
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+	/* .container {
+		min-width: var(--container-width-desktop-regular);
+		max-width: var(--container-width-desktop-regular);
+	} */
+}
+
+@media only screen and (min-width: 100px) and (max-width: 767px) {
+	.container {
+		min-width: var(--container-width-mobile-regular);
+		max-width: var(--container-width-mobile-regular);
+		margin-bottom:5px;
+	}
+}
+
+/* --container-width-desktop-large:1200px;
+--container-width-desktop-regular:1000px;
+--container-width-mobile-regular:600px; */

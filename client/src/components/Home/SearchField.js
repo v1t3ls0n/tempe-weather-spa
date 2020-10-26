@@ -43,8 +43,8 @@ const SearchField = ({theme}) => {
 	};
 
 	const toasterNotifications = toasters !== null && (
-		<div className='container'>
-			<div className={`toaster-wrapper ${toasters.type}`} key={toasters.id}>
+		<div className={`toaster-wrapper ${toasters.type}`} key={toasters.id}>
+			<div className='container'>
 				<h3> {toasters.msg}</h3>
 			</div>
 		</div>
@@ -116,15 +116,13 @@ const SearchField = ({theme}) => {
 	};
 
 	const prettyDateRange = weatherForecast && (
-		<div className={theme}>
-			<label className='date-range'>
-				{`${weatherForecast.current.month} 
+		<label className='date-range'>
+			{`${weatherForecast.current.month} 
 		${weatherForecast.current.dayNumeric}`}
-				<sup className='th'>th</sup>
-				{`— ${weatherForecast.daily[4].dayNumeric}`}
-				<sup>th</sup>
-			</label>
-		</div>
+			<sup className='th'>th</sup>
+			{`— ${weatherForecast.daily[4].dayNumeric}`}
+			<sup>th</sup>
+		</label>
 	);
 
 	const toggleCF = (
@@ -158,7 +156,7 @@ const SearchField = ({theme}) => {
 	//// Search Field Component's Elements
 
 	const search = (
-		<div className={theme}>
+		<div>
 			<div className='container'>
 				<div className='search'>
 					{searchOptions && (
@@ -190,14 +188,38 @@ const SearchField = ({theme}) => {
 	);
 
 	const weatherForecastResultsHeader = city && weatherForecast && (
-		<div className={theme}>
-			<div className='container'>
-				<div className='results-title'>
-					{makeFavorite}
-					<h1 className='city-title'>{city.name} </h1>
-					<h1 className='country-title'>{city.country}</h1>
-					{toggleCF}
-					{prettyDateRange}
+		<div className='container'>
+			<div className='results-title'>
+				{makeFavorite}
+
+				<span className='city-title'>
+					<h1>{city.name} </h1>
+				</span>
+
+				<h1 className='country-title'>{city.country}</h1>
+
+				{toggleCF}
+				{prettyDateRange}
+			</div>
+		</div>
+	);
+
+	const weatherForecastResultsHeaderMobile = city && weatherForecast && (
+		<div className='container'>
+			<div className='results-title-mobile'>
+				{makeFavorite}
+				<div className='city-country-date-container'>
+					<h1>
+						{city.name} <span>{city.country}</span>
+					</h1>
+
+					<div className='mobile-date-range'>
+						<label>
+							{`${weatherForecast.current.day} 
+							${weatherForecast.current.dayNumeric}`}
+							<sup className='th'>th</sup>
+						</label>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -216,6 +238,7 @@ const SearchField = ({theme}) => {
 			{toasterNotifications}
 			{search}
 			{weatherForecastResultsHeader}
+			{weatherForecastResultsHeaderMobile}
 			{weatherForecastResultsContent}
 		</Fragment>
 	);

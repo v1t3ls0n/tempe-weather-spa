@@ -8,7 +8,7 @@ const ForecastCard = ({theme, day, temp, description, shortDescription, icon, te
 	return (
 		<div className='forecast-card'>
 			<h2>{day}</h2>
-			<div className={theme && `weather-svg-icon ${theme}`}>{iconSVG}</div>
+			<div className='weather-svg-icon'>{iconSVG}</div>
 			<h4 className='temperature'>
 				{tempFormat ? convertKelvinToCelius(temp.day) : convertKelvinToFahrenheit(temp.day)}°
 			</h4>

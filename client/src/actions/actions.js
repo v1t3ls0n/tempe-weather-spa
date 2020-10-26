@@ -122,6 +122,7 @@ export const callWeatherAPI = async (lat, lon) => {
 export const callAutoCompleteAPI = async (input) => {
 	try {
 		let res = await axios.get(`/api/autocomplete/${input}/limit/10`);
+		console.log(res.data);
 		return res.data;
 	} catch (err) {
 		console.error(err);

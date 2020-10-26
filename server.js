@@ -118,9 +118,12 @@ app.get('/api/autocomplete/:cityNameInput/limit/:size', cors(), async (req, res)
 	// finally here we fetching the autocomplete city name results from our MongoDB cities collection
 	try {
 		const results = await availableCities
-			.find({name: {$regex: '^' + cityName}})
+			.find({name: {$regex: '^(?=.{1,12}$)' + cityName}})
 			.limit(limit)
 			.select('name country id coord -_id');
+
+		console.log(results);
+
 		res.send(results);
 	} catch (err) {
 		res.status(500).send('Server Error');

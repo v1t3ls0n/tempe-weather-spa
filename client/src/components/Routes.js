@@ -14,20 +14,26 @@ const Routes = ({theme, toggleLightDarkMode}) => {
 	}, []);
 
 	return (
-		<div id='app-root'>
+		<div className={theme} id='root-div'>
 			<Router>
-				<header className='header-container'>
+				<header>
 					<div className='container'>
-						<img src={LogoIcon} alt={LogoIcon} className='LogoIcon'></img>
-						{toggleLightDarkMode}
-						<ul>
-							<li>
-								<a href='/home'>Home</a>
-							</li>
-							<li>
-								<a href='/Favorites'>Favorites</a>
-							</li>
-						</ul>
+						<div className='header-container'>
+							<a href='/home'>
+								<img src={LogoIcon} alt={LogoIcon} className='LogoIcon'></img>
+							</a>
+
+							{toggleLightDarkMode}
+
+							<ul className='navbar-menu'>
+								<li>
+									<a href='/home'>Home</a>
+								</li>
+								<li>
+									<a href='/Favorites'>Favorites</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</header>
 				{/* <footer>

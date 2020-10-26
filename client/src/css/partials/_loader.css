@@ -1,0 +1,10 @@
+/* Loader component */
+.loader {
+	position: relative;
+	font-size: 30px;
+	margin: auto;
+	margin-top: 80px;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}

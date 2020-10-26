@@ -29,10 +29,11 @@ const Favorites = ({theme}) => {
 
 	const createOrRemoveToasters = ({msg, id, type, seconds = 3000}) => {
 		setToasters({msg: msg, id: id, type: type});
-		if (!seconds === 'forever')
+		if (seconds !== 'forever') {
 			setTimeout(() => {
 				setToasters(null);
 			}, seconds);
+		}
 	};
 
 	const checkIfInFavorites = (cityID) => {
@@ -43,11 +44,11 @@ const Favorites = ({theme}) => {
 		return isFavorite;
 	};
 
-	const removeFromFavorites = (cityID, city) => {
+	const removeFromFavorites = (cityID, cityName) => {
 		if (checkIfInFavorites(cityID))
 			setFavorites((favorites) => favorites.filter((favoriteCity) => favoriteCity.id !== cityID));
 		createOrRemoveToasters({
-			msg: `Youv'e removed ${city.name} to your favorite cities`,
+			msg: `Youv'e removed ${cityName} to your favorite cities`,
 			id: uuidv4(),
 			type: 'negative',
 			seconds: 6000
@@ -59,17 +60,19 @@ const Favorites = ({theme}) => {
 	const getCurrentDate = () => {
 		const currentDayName = convertDayNumberToName(new Date().getDay());
 		const currentDayNumberInMonth = new Date().getDate();
-		console.log(`inside current date`);
+
 		return (
-			<div className={theme && `fav-date ${theme}`}>
+			<span className={theme && `fav-date ${theme}`}>
 				<h1>{currentDayName}</h1>
 				<h1>{currentDayNumberInMonth}</h1>
 				<sup>th</sup>
-			</div>
+			</span>
 		);
 	};
 
 	useEffect(() => {
+		console.log('inside useEffect');
+		console.log(favorites);
 		// IIFE that loads the current weather data of your favorite cities
 		(async () => {
 			try {
@@ -123,12 +126,14 @@ const Favorites = ({theme}) => {
 	);
 
 	const toggleCF = isLoadingPageDataFinished && favorites.length > 0 && (
-		<div onClick={() => handleToggleTempClick()} className='toggleCF'>
-			<span className={tempFormat ? 'c active' : 'c'}>C°</span>
-			<div className='toggle-wrapper'>
-				<div className={tempFormat ? 'toggle-btn c' : 'toggle-btn f'}></div>
+		<div className='favoriteCardContainerGrid'>
+			<div onClick={() => handleToggleTempClick()} className='toggleCF'>
+				<span className={tempFormat ? 'c active' : 'c'}>C°</span>
+				<div className='toggle-wrapper'>
+					<div className={tempFormat ? 'toggle-btn c' : 'toggle-btn f'}></div>
+				</div>
+				<span className={!tempFormat ? 'f active' : 'f'}>F°</span>
 			</div>
-			<span className={!tempFormat ? 'f active' : 'f'}>F°</span>
 		</div>
 	);
 
@@ -166,45 +171,48 @@ const Favorites = ({theme}) => {
 
 	return (
 		<main id='favorites' className={theme}>
-			<div className='FavoriteComponentDiv'>
-				{toasterNotifications}
-				{favoriteHeader}
-				<div className='toggleDiv'>{toggleCF}</div>
-				<div className='favoritesContainer'>
-					{isLoadingPageDataFinished &&
-						citiesCurrentWeatherData.map((cityWeather, i) => {
-							return (
-								<FavoriteCard
-									theme={theme}
-									key={i}
-									name={cityWeather.name}
-									country={cityWeather.country}
-									timezone={cityWeather.timezone}
-									timezone_offset={cityWeather.timezone_offset}
-									hour={cityWeather.current.hour}
-									AMorPM={cityWeather.current.AMorPM}
-									cityID={cityWeather.id}
-									date_timestamp={cityWeather.current.date_timestamp}
-									day={cityWeather.current.day}
-									dayNumeric={cityWeather.current.dayNumeric}
-									month={cityWeather.current.month}
-									monthNumeric={cityWeather.current.monthNumeric}
-									year={cityWeather.current.year}
-									yearShorten={cityWeather.current.yearShorten}
-									date={cityWeather.current.date}
-									temp={
-										tempFormat
-											? convertKelvinToCelius(cityWeather.current.temp)
-											: convertKelvinToFahrenheit(cityWeather.current.temp)
-									}
-									description={cityWeather.current.description}
-									shortDescription={cityWeather.current.shortDescription}
-									icon={cityWeather.current.icon}
-									checkIfInFavorite={checkIfInFavorites}
-									removeFromFavorites={removeFromFavorites}
-								/>
-							);
-						})}
+			<div className='container'>
+				<div className='FavoriteComponentDiv'>
+					{toasterNotifications}
+					{favoriteHeader}
+
+					<div className='favoritesContainer'>
+						<div className='toggleDiv'>{toggleCF}</div>
+						{isLoadingPageDataFinished &&
+							citiesCurrentWeatherData.map((cityWeather, i) => {
+								return (
+									<FavoriteCard
+										theme={theme}
+										key={i}
+										name={cityWeather.name}
+										country={cityWeather.country}
+										timezone={cityWeather.timezone}
+										timezone_offset={cityWeather.timezone_offset}
+										hour={cityWeather.current.hour}
+										AMorPM={cityWeather.current.AMorPM}
+										cityID={cityWeather.id}
+										date_timestamp={cityWeather.current.date_timestamp}
+										day={cityWeather.current.day}
+										dayNumeric={cityWeather.current.dayNumeric}
+										month={cityWeather.current.month}
+										monthNumeric={cityWeather.current.monthNumeric}
+										year={cityWeather.current.year}
+										yearShorten={cityWeather.current.yearShorten}
+										date={cityWeather.current.date}
+										temp={
+											tempFormat
+												? convertKelvinToCelius(cityWeather.current.temp)
+												: convertKelvinToFahrenheit(cityWeather.current.temp)
+										}
+										description={cityWeather.current.description}
+										shortDescription={cityWeather.current.shortDescription}
+										icon={cityWeather.current.icon}
+										checkIfInFavorite={checkIfInFavorites}
+										removeFromFavorites={removeFromFavorites}
+									/>
+								);
+							})}
+					</div>
 				</div>
 			</div>
 		</main>

@@ -15,13 +15,15 @@ const App = () => {
 	};
 
 	const toggleLightDarkMode = (
-		<div onClick={() => setTheme(!lightDarkThemeToggle)} className='toggleLightDarkMode-wrapper'>
-			<img
-				src={lightDarkThemeToggle ? Sun : Moon}
-				alt=''
-				className={lightDarkThemeToggle ? 'SunIcon Active' : 'MoonIcon Active'}
-			/>
-		</div>
+		<span onClick={() => setTheme(!lightDarkThemeToggle)} className='toggleLightDarkMode-wrapper'>
+			<div className='container'>
+				<img
+					src={lightDarkThemeToggle ? Sun : Moon}
+					alt=''
+					className={lightDarkThemeToggle ? 'SunIcon Active' : 'MoonIcon Active'}
+				/>
+			</div>
+		</span>
 	);
 
 	return (
