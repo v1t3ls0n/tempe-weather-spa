@@ -52,7 +52,7 @@ overflow:hidden
 	.container {
 		min-width: var(--container-width-mobile-regular);
 		max-width: var(--container-width-mobile-regular);
-		margin-bottom:5px;
+	
 	}
 }
 

@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
 
-
-
 .LogoIcon {
 	width: 150px;
 	height: 100%;
@@ -12,15 +10,13 @@
 	padding: auto auto;
 }
 
-header > .container > .header-container {
+header>.container>.header-container {
 	position: relative;
 	display: flex;
 	top: 0px;
 	width: 100%;
 	height: 80px;
 	top: 0px;
-
-	/* margin: auto auto; */
 }
 
 header {
@@ -28,43 +24,34 @@ header {
 	z-index: 1;
 	position: sticky;
 	width: 100vw;
-	height: 80px;
+	max-height: 80px;
 	background-color: white;
 }
 
 
 header ul {
-	height: 100%;
+	max-height: 80px;
 	display: flex;
 	position: absolute;
 	right: 0px;
-
 	padding: auto auto;
 
 }
 
 header ul li a {
-
 	color: #7085c1;
 	margin: auto auto;
 	padding: 0px 15px;
-
 	font-size: 20px;
 	letter-spacing: 0.5px;
 	text-align: center;
-
-
-
 }
 
 .navbar-menu {
-
 	display: flex;
 }
 
-
 header ul li a {
-
 	display: flex;
 	position: relative;
 	top: 25px;
@@ -80,7 +67,39 @@ header ul li a:hover {
 }
 
 @media only screen and (max-width: 767px) {
+	header {
+		max-height: 50px;
+	}
+
+	header ul {
+		max-height: 50px;
+	}
+
 	header ul li:nth-child(1) a {
 		display: none;
+		height:0px;
+		width: 0px;
 	}
+	header ul li:nth-child(2) {
+margin-right: 10px;
+	}
+
+
+	header ul li:nth-child(2) a {
+		font-size: 16px;
+		top:18px;
+		left:0px;
+
+	}
+
+	.LogoIcon {
+		height: 30px;
+		top: 10px;
+		left: 5px;
+	}
+
+	.header-container>a>img {
+		width: 100px;
+	}
+
 }

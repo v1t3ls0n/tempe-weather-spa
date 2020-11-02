@@ -162,10 +162,10 @@ const Favorites = ({theme}) => {
 					<span role='img' aria-label=''>
 						😒
 					</span>
-					You Currently Dont Have Even One Favorite City! Go Back To Homepage And Add Some
+					You currently don't have even one favorite city! Go back to the homepage and add some.
 				</h1>
 			</div>
-			{welcomingTitle}
+			{favorites.length > 0 && welcomingTitle}
 		</div>
 	);
 

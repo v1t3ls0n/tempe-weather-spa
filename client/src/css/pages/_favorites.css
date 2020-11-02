@@ -125,7 +125,7 @@
 
 .hour.nightTheme {
 	color: #7085c1;
-	padding-right: 5px;
+	padding-right: 0px;
 }
 
 .favorite-card-shortDescription {
@@ -143,7 +143,9 @@
 	margin-bottom: 20px;
 }
 
-.toggleCF {
+.favoriteCardContainerGrid .toggleCF {
+
+	top: 0%;
 	box-shadow: none;
 	border-radius: 0px;
 	border: 0px;
@@ -152,6 +154,10 @@
 	width: 150px;
 	margin-bottom: 20px;
 	left: 40px;
+}
+
+.toggleCF span {
+	margin: 0px;
 }
 
 .toggleDiv .toggleCF span.c {
@@ -232,9 +238,12 @@
 	font-size: 20px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width:200px) and (max-width: 767px) {
 
+.toggleCF {
 
+	margin-left:35px;
+}
 
 	.FavoriteIcon img {
 		z-index: -2;
@@ -244,18 +253,14 @@
 	}
 
 	.favoritesContainer {
-
-
-top:20px;
-	
-	
+		top: 20px;
 	}
 
 	.fav-header {
 		width: 100%;
 		margin: auto;
 		margin-top: 20px;
-	
+
 	}
 
 	.favoriteTitle {
@@ -263,17 +268,17 @@ top:20px;
 	}
 
 	.favoriteTitle {
-		
-position: absolute;
+
+		position: absolute;
 
 	}
 
 	.favoriteTitle h1 {
 		font-size: 25px;
 		position: relative;
-		width:70%;
+		width: 70%;
 		text-align: center;
-		
+
 	}
 
 	.fav-date {
@@ -303,9 +308,7 @@ position: absolute;
 		width: 300px;
 	}
 
-	.toggleCF {
-		margin-left: 35px;
-		}
+
 
 	.favoritesContainer {
 		width: 100%;

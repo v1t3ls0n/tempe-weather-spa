@@ -230,6 +230,7 @@ const SearchField = ({theme}) => {
 			theme={theme}
 			tempFormat={tempFormat}
 			weeklyForecast={weatherForecast.daily}
+			toggleCF={toggleCF}
 		/>
 	);
 

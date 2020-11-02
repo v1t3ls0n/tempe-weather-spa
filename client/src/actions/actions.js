@@ -104,6 +104,10 @@ export const loadSVGicon = (icon, temp) => {
 	return iconSVG;
 };
 
+function temp(temp) {
+	return Math.round(temp - 273.15);
+}
+
 export const convertKelvinToCelius = (temp) => Math.round(temp - 273.15);
 export const convertKelvinToFahrenheit = (temp) => Math.round((temp - 273.15) * 1.8 + 32);
 

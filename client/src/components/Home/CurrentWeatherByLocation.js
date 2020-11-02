@@ -3,7 +3,7 @@ import ForecastCard from './ForecastCard';
 
 // import PropTypes from 'prop-types';
 
-const CurrentWeatherByLocation = ({weeklyForecast, tempFormat, theme}) => {
+const CurrentWeatherByLocation = ({weeklyForecast, tempFormat, theme, toggleCF}) => {
 	return (
 		<div className='container'>
 			<div className='weekly-forecast'>
@@ -27,6 +27,7 @@ const CurrentWeatherByLocation = ({weeklyForecast, tempFormat, theme}) => {
 							description={day.description}
 							shortDescription={day.shortDescription}
 							icon={day.icon}
+							toggleCF={toggleCF}
 						/>
 					);
 				})}

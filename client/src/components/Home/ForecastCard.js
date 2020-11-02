@@ -1,7 +1,16 @@
 import React from 'react';
 import {loadSVGicon, convertKelvinToCelius, convertKelvinToFahrenheit} from '../../actions/actions';
 // import PropTypes rom 'prop-types';
-const ForecastCard = ({theme, day, temp, description, shortDescription, icon, tempFormat}) => {
+const ForecastCard = ({
+	theme,
+	day,
+	temp,
+	description,
+	shortDescription,
+	icon,
+	tempFormat,
+	toggleCF
+}) => {
 	let iconSVG = loadSVGicon(icon, temp.day);
 	console.log(`theme in forecast cards ${theme}`);
 
@@ -13,6 +22,7 @@ const ForecastCard = ({theme, day, temp, description, shortDescription, icon, te
 				{tempFormat ? convertKelvinToCelius(temp.day) : convertKelvinToFahrenheit(temp.day)}°
 			</h4>
 			<hr />
+
 			<h4 className='weather-description'>{shortDescription}</h4>
 		</div>
 	);
