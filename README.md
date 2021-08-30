@@ -2,7 +2,7 @@
 
 #### Web Development by Guy Vitelson | UX/UI Design by May Vitelson
 
-#### built with React.js Node.js MongoDB Database and the OpenWeatherMap API
+#### Built with React.js Node.js MongoDB Database and the OpenWeatherMap API
 
 ## About
 
@@ -16,7 +16,7 @@ https://tempe-weather.herokuapp.com/
 # Requirements:
 
 For development, you need Node.js and NPM (as a node global package resource) installed in your environement
-and also you will need to pass through the proccess of generating your own keys (mongoD URI, OpenWeatherMap API key)
+and also you will need to pass through the proccess of generating your own keys (MongoDB cluster URI, OpenWeatherMap API key)
 and then edit the ./config/default.json file and fill its key value pairs with the keys you generated.
 
 # Instructions
@@ -35,10 +35,10 @@ First you must go through Install instructions and then move to the Generate ins
 
 ### OpenWeatherMap API key
 
-                $ First go and get your own api key for the OpenWeatherMap API, get if from from https://openweathermap.org/api
-                $ Paste your key string inside the config/default.json as the value of the 'weatherAPIkey' key-value pair.
+            $ First go and get your own api key for the OpenWeatherMap API, get if from from https://openweathermap.org/api
+            $ Paste your key string inside the config/default.json as the value of the 'weatherAPIkey' key-value pair.
 
-### MongoDB URI Link :
+### MongoDB URI Link
 
                 $ Go to https://account.mongodb.com/account/login
                 $ Login to your account, or create one

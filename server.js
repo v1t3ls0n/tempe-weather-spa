@@ -23,7 +23,7 @@ app.get("/Favorites", function (req, res) {
   console.log("inside get app");
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
-// end of code that is the the production version
+
 
 app.listen(PORT, () => console.log(`SERVER STARTED ON PORT ${PORT}`));
 
