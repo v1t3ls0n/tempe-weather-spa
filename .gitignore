@@ -1,4 +1,9 @@
+#  Tip : 
+#  if you are in development mode - include 'build' folder and exclude 'client' folder 
+#  if you are in production mode - include 'client' folder and exclude 'build' folder 
 
 node_modules
-build 
-_default.json
+config/_default.json
+
+build
+# client
