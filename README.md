@@ -2,7 +2,7 @@
 Tempe is a mobile-responsive single page application for weather forecast of cities arround the globe.
 The Home screen/page shows a 5 days weather forecast starting at the current date,
 user can add cities to his saved favorite cities (saved on localStorage) and then 
-get the weather's forecast of the each of his favorite city in the the Favorite screen/page.
+get the daily weather's forecast of the each of his favorite city in the the Favorite screen/page.
 
 #### Web Development by Guy Vitelson | UX/UI Design by May Vitelson 
 #### Built with React.js , Node.js with MongoDB Database and the OpenWeatherMap API 
