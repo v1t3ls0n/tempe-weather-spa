@@ -35,7 +35,7 @@ get the daily weather's forecast of the each of his favorite city in the the Fav
     $ npm run build
     $ mv build ./../
     $ npm start
-    $ go to localhost:300 for getting the running Weather app in production mode (from build)
+    $ go to localhost:3000 for getting the running Weather app in production mode (from build)
     
     
 ---
