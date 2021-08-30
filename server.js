@@ -7,7 +7,7 @@ const cors = require('cors');
 const config = require('config');
 const path = require('path');
 const mongoURI = config.get('mongoURI');
-const WeatherAPIkey2 = config.get('weatherAPIkey2');
+const WeatherAPIkey = config.get('weatherAPIkey');
 
 const PORT = process.env.PORT || 8080;
 
@@ -47,7 +47,7 @@ db.once('open', function () {
 const cityOptionsSchema = new Schema({
 	_id: Schema.Types.ObjectId,
 	id: Number,
-	coord: {lon: Number, lan: Number},
+	coord: { lon: Number, lan: Number },
 	country: String,
 	geoname: {
 		cl: String,
@@ -109,7 +109,7 @@ app.get('/api/autocomplete/:cityNameInput/limit/:size', cors(), async (req, res)
 
 	//verifying that cityNameInput param is a string and not a number
 	if (!isNaN(cityName))
-		return res.status(400).json({msg: 'wrong search Input, input must not include numbers'});
+		return res.status(400).json({ msg: 'wrong search Input, input must not include numbers' });
 
 	//city names in our DB starts with capital letter on each first word like it should be,
 	// here I'm converting user's city name input to match our DB filenaming style
@@ -118,7 +118,7 @@ app.get('/api/autocomplete/:cityNameInput/limit/:size', cors(), async (req, res)
 	// finally here we fetching the autocomplete city name results from our MongoDB cities collection
 	try {
 		const results = await availableCities
-			.find({name: {$regex: '^(?=.{1,12}$)' + cityName}})
+			.find({ name: { $regex: '^(?=.{1,12}$)' + cityName } })
 			.limit(limit)
 			.select('name country id coord -_id');
 
@@ -136,14 +136,14 @@ app.get('/api/autocomplete/:cityNameInput/limit/:size', cors(), async (req, res)
 
 app.get('/api/weatherForecast/lat/:lat/lon/:lon/', cors(), async (req, res) => {
 	console.log(`inside weatherapi get request before axios actions`);
-	let {lat, lon} = req.params;
+	let { lat, lon } = req.params;
 	lat = parseFloat(lat);
 	lon = parseFloat(lon);
 	if (isNaN(lat) || isNaN(lon)) return res.status(400).send('lat or lon passed are not numbers');
 
 	try {
 		const results = await axios.get(
-			`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${WeatherAPIkey2}`
+			`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${WeatherAPIkey}`
 		);
 
 		////THE SECTION BELLOW IS FOR CONVERTING AND FORMATTING THE DATA WE GOT FROM WEATHER API IN ORDER TO SEND THE RELEVANT DATA TO CLIENT (FRONT END)
@@ -266,7 +266,7 @@ app.get('/api/weatherForecast/lat/:lat/lon/:lon/', cors(), async (req, res) => {
 			console.log(`in 429 err`);
 			return res
 				.status(err.response.status)
-				.json({data: {err: '429', msg: 'Too Many GET Requests to Weather Maps API'}});
+				.json({ data: { err: '429', msg: 'Too Many GET Requests to Weather Maps API' } });
 		} else res.status(err.response.status).send(err.response);
 	}
 });

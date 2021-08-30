@@ -24,17 +24,16 @@ import icon_50n from '../img/weather_icons_night/50n.svg';
 
 import axios from 'axios';
 
-// baseURL for making production build :
-// axios.defaults.baseURL = '';
 
-// baseURL when working in development:
-axios.defaults.baseURL = 'http://localhost:8080/';
+axios.defaults.baseURL = ((process.env.NODE_ENV || '').trim() !== 'production') ? 'http://localhost:8080/' : '';
 
+console.log({ baseURL: axios.defaults.baseURL });
 axios.defaults.timeout = 90000;
 axios.defaults.withCredentials = false;
 axios.defaults.headers = {
 	'Content-Type': 'application/json'
 };
+
 
 /// loads the right SVG weather icon for the specific weather description
 export const loadSVGicon = (icon, temp) => {
