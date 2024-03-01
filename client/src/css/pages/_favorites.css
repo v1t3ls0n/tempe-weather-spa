@@ -54,7 +54,7 @@
 
 .cityContainer {
 	height: 100%;
-	width: 350px;
+	min-width: 350px;
 	display: flex;
 	background-color: #7085c1;
 	border-radius: 12px 0px 0px 12px;
