@@ -23,4 +23,4 @@ Explore the app's features and enjoy real-time weather updates with just a click
 - **WeatherAPI**: As our reliable source of weather data.
 - **Heroku**: For hosting the live demo, ensuring the app is accessible anytime, anywhere.
 
-## Development by Guy Vitelson | UX/UI Design by May Vitelson (Created in 2020)
+### © Development by Guy Vitelson | UX/UI Design by May Vitelson (Created in 2020)
