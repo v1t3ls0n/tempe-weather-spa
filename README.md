@@ -1,7 +1,6 @@
 # Tempe Weather - Single Page Weather Forecast App
-## Development - Guy Vitelson
-## UX/UI Design - May Vitelson
-#### Created in 2020
+## Development by Guy Vitelson | UX/UI Design by May Vitelson
+### Created in 2020
 
 Welcome to the GitHub repository for Tempe Weather, a sleek and intuitive single-page application designed to provide you with real-time weather forecasts. Built with React for the frontend and Node.js for the backend, and utilizing MongoDB for data storage, this app integrates seamlessly with WeatherAPI to fetch accurate and up-to-date weather information. Whether you're planning your week ahead or just curious about the weather in your area, Tempe Weather has you covered.
 
