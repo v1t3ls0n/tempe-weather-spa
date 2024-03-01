@@ -1,0 +1,381 @@
+.user-have-no-favorites {
+	position: relative;
+	text-align: center;
+	margin: auto;
+	margin-top: 60px;
+	align-items: center;
+	justify-content: center;
+}
+
+.favoritesContainer {
+	position: absolute;
+	display: inline-block;
+	right: 0%;
+}
+
+.FavoriteComponentDiv {
+	height: 100vh;
+	margin-top: 3.5%;
+	position: relative;
+	display: block;
+	right: 300px;
+	left: 0px;
+}
+
+.favoriteCardContainer {
+	display: flex;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	width: 800px;
+	height: 65px;
+	margin-bottom: 20px;
+}
+
+.data-col {
+	display: flex;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.favoriteCardContainer .weather-svg-icon-in-favorites {
+	height: 100%;
+	width: 80px;
+	position: relative;
+	margin: auto 20px;
+	padding-top: 5px;
+}
+
+.favoriteCardContainer .weather-svg-icon-in-favorites>img {
+	padding: auto auto;
+
+	width: 100%;
+	height: 100%;
+}
+
+.cityContainer {
+	height: 100%;
+	width: 350px;
+	display: flex;
+	background-color: #7085c1;
+	border-radius: 12px 0px 0px 12px;
+}
+
+.cityContainer>h1 {
+	font-size: 27px;
+	margin: auto auto;
+}
+
+.city-title-favorite.dayTheme {
+	color: white;
+}
+
+.temp-fav {
+	height: 100%;
+	width: 80px;
+	position: relative;
+	display: flex;
+}
+
+.temp-fav>h4 {
+	font-size: 25px;
+	margin: auto 20px;
+}
+
+.temp-fav.dayTheme {
+	color: orange;
+}
+
+.favorite-card-shortDescription {
+	width: 90px;
+	margin: auto 20px;
+	left: 0px;
+}
+
+.favorite-card-shortDescription>h2 {
+	font-size: 25px;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.favorite-card-shortDescription.nightTheme {
+	color: #7085c1;
+}
+
+.hourAMPM {
+	position: relative;
+	display: flex;
+	height: 100%;
+	display: flex;
+	padding: 20px;
+}
+
+.hourAMPM>h3 {
+	font-size: 22px;
+	margin: auto auto;
+}
+
+.hourAMPM.nightTheme {
+	color: #7085c1;
+}
+
+.AMorPM.nightTheme {
+	letter-spacing: 1px;
+	color: #7085c1;
+}
+
+.hour.nightTheme {
+	color: #7085c1;
+	padding-right: 5px;
+}
+
+.favorite-card-shortDescription {
+	left: 0px;
+}
+
+/* toggle CF adjustments to favorite page */
+
+.favoriteCardContainerGrid {
+	margin: auto;
+	display: flex;
+	position: relative;
+	width: 700px;
+	height: 65px;
+	margin-bottom: 20px;
+}
+
+.toggleCF {
+	box-shadow: none;
+	border-radius: 0px;
+	border: 0px;
+	position: relative;
+	display: block;
+	width: 150px;
+	margin-bottom: 20px;
+	left: 40px;
+}
+
+.toggleDiv .toggleCF span.c {
+	font-size: 30px;
+	top: 0.1;
+	left: -10px;
+}
+
+.toggleDiv .toggleCF span.f {
+	font-size: 30px;
+	top: 0.1;
+	right: -10px;
+}
+
+.fav-header {
+	/* background-color: darkblue; */
+	display: flex;
+	position: absolute;
+	min-height: 70vh;
+	width: 30%;
+	margin-top: 75px;
+	margin-bottom: 40px;
+}
+
+.favoriteTitle h1 {
+	position: absolute;
+	top: 0;
+	font-weight: 900;
+	font-size: 50px;
+	width: 400px;
+	margin: auto;
+
+	justify-content: center;
+	text-align: left;
+}
+
+.favoriteTitle.nightTheme h1 {
+	color: #7085c1;
+}
+
+.FavoriteIcon img {
+	position: absolute;
+	width: 270px;
+	height: 270px;
+	left: 0;
+	top: 350px;
+}
+
+.fav-date {
+	position: absolute;
+	display: flex;
+	top: 220px;
+}
+
+.fav-date.nightTheme {
+	color: white;
+}
+
+.fav-date.dayTheme {
+	color: orange;
+}
+
+.fav-date h1 {
+	font-weight: 600;
+	font-size: 40px;
+	padding-right: 10px;
+}
+
+.fav-date h1:nth-last-child(2) {
+	font-size: 35px;
+	margin: auto auto;
+	margin-right: -4px;
+	padding-right: 10px;
+}
+
+.fav-date sup {
+	letter-spacing: 2.5px;
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+
+
+
+	.FavoriteIcon img {
+		z-index: -2;
+		top: 0px;
+		opacity: 0%;
+		width: 100%;
+
+	}
+
+	.favoritesContainer {
+
+
+top:20px;
+	
+	
+	}
+
+	.fav-header {
+		width: 100%;
+		margin: auto;
+		margin-top: 20px;
+	
+	}
+
+	.favoriteTitle {
+		width: 100%;
+	}
+
+	.favoriteTitle {
+		
+position: absolute;
+
+	}
+
+	.favoriteTitle h1 {
+		font-size: 25px;
+		position: relative;
+		width:70%;
+		text-align: center;
+		
+	}
+
+	.fav-date {
+		top: 70px;
+		position: relative;
+		width: fit-content;
+		height: fit-content;
+		margin: 0px auto;
+
+	}
+
+	.fav-date h1 {
+		font-size: 25px;
+	}
+
+	.fav-date h1:nth-child(2) {
+		font-size: 25px;
+		margin: 0px 0px;
+	}
+
+	.fav-date sup {
+		font-size: 15px;
+	}
+
+	.favoriteCardContainerGrid {
+		margin: auto auto;
+		width: 300px;
+	}
+
+	.toggleCF {
+		margin-left: 35px;
+		}
+
+	.favoritesContainer {
+		width: 100%;
+
+		margin-top: 120px;
+	}
+
+	.favoriteCardContainer {
+		width: 300px;
+		height: 130px;
+		display: block;
+		position: relative;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+
+	.cityContainer {
+		width: 300px;
+		border-radius: 12px 12px 0px 0px;
+		height: 65px;
+	}
+
+	.cityContainer>h1 {
+		font-size: 20px;
+
+	}
+
+	.temp-fav {
+		margin: auto 0px;
+		width: auto;
+	}
+
+	.temp-fav h4 {
+		font-size: 20px;
+		margin: 0px;
+	}
+
+	.favoriteCardContainer .weather-svg-icon-in-favorites {
+		height: 65px;
+		width: 65px;
+		position: relative;
+		margin: auto 10px;
+		padding-top: 0px;
+	}
+
+	.favoriteCardContainer .weather-svg-icon-in-favorites>img {
+		height: 65px;
+		width: 65px;
+		padding: 0px 0px;
+	}
+
+	.favorite-card-shortDescription {
+		margin: auto 10px;
+		width: auto;
+	}
+
+	.favorite-card-shortDescription h2 {
+		font-size: 20px;
+	}
+
+	.hourAMPM {
+		z-index: 1;
+		position: absolute;
+		top: 25%;
+		right: 0px;
+		margin: auto 0px;
+	}
+
+	.hourAMPM>h3 {
+		font-size: 20px;
+	}
+}

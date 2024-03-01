@@ -1,0 +1,20 @@
+
+
+:root {
+
+  /* Font Colors */
+  --white-font-color:white;
+  --orange-font-color:#ffa500;
+  --blueberry-font-color:#7085c1;
+ 
+    /* Background Gradient For Theme */
+  --dark-theme-background-color-gradient: radial-gradient(circle at 50%, #626abe 0%, #626abe 5%, #1a2677 65%);
+  --light-theme-background-color-gradient : radial-gradient(circle, #fffff1, #fffff1 50%, #ffefba);
+
+ /* Containers Width */
+--container-width-desktop-large:1200px;
+--container-width-desktop-regular:1000px;
+--container-width-mobile-regular:360px;
+
+}
+

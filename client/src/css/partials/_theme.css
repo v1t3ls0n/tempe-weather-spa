@@ -1,0 +1,21 @@
+
+
+
+
+ #root-div.dayTheme {
+	background: var(--light-theme-background-color-gradient);
+	color:var(--blueberry-font-color);
+}
+
+ #root-div.nightTheme {
+
+	color:var(--white-font-color);
+	background:var(--dark-theme-background-color-gradient);
+}
+
+
+a.nightTheme {
+	color: #7085c1;
+}
+
+

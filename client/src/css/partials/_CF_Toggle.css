@@ -1,0 +1,68 @@
+/* toggle temp */
+/**************************/
+
+.toggleCF-home {
+	position: absolute;
+	height: 100%;
+	width: 200px;
+	left: 40%;
+	cursor: pointer;
+}
+
+.toggleCF-home > span {
+	font-size: 30px;
+	position: absolute;
+	top: 20%;
+
+	transition: all 0.5s ease-in;
+}
+span.c {
+	left: 5px;
+	opacity: 0.5;
+}
+span.f {
+	right: 5px;
+	opacity: 0.5;
+}
+
+span.active {
+	opacity: 1;
+
+	transform: scale(1.2);
+}
+
+.toggle-wrapper-home {
+	position: relative;
+	display: flex;
+	background: linear-gradient(
+		90deg,
+		rgba(124, 129, 190, 1),
+		rgba(255, 255, 255, 0.5),
+		rgba(124, 129, 190, 1)
+	);
+	height: 2px;
+	width: 70px;
+	align-items: center;
+	justify-content: center;
+	top: 50%;
+	margin: auto;
+}
+
+.toggle-btn-home {
+	position: absolute;
+	display: flex;
+	border-radius: 0.75em;
+	width: 40px;
+	height: 12px;
+	transform: translate(27px, 0px);
+	transition: all 0.3s ease-in;
+	background-color: #7085c1;
+}
+
+.toggle-btn-home.c {
+	transform: translate(-20px, 0px);
+}
+
+.toggle-btn-home.f {
+	transform: translate(20px, 0px);
+}
