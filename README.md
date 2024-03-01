@@ -13,7 +13,7 @@ Explore the app's features and enjoy real-time weather updates with just a click
 
 - **Real-time Weather Data**: Get up-to-date weather information for any location worldwide.
 - **Intuitive Interface**: Our user-friendly design makes navigating through weather forecasts as breezy as a calm day.
-- **Responsive Design**: Whether on desktop, tablet, or mobile, Tempe Weather provides a seamless experience across all devices.
+- **Responsive Design**: for Desktop and mobile devices
 - **Location Search**: Easily search for any city, region, or country to get its current weather and forecast.
 - **Forecast Details**: Access detailed weather information including temperature, humidity, wind speed, and more.
 
