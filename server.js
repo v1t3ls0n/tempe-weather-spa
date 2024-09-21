@@ -6,8 +6,8 @@ const app = express();
 const cors = require("cors");
 const config = require("config");
 const path = require("path");
-const mongoURI = config.get("mongoURI");
-const WeatherAPIkey = config.get("weatherAPIkey");
+const mongoURI = process.env.NODE_ENV === "production" ? process.env.MONGO_URI : config.get("MONGO_URI");
+const WeatherAPIkey = process.env.NODE_ENV === "production" ? process.env.WEATHER_API_KEY : config.get("WEATHER_API_KEY");
 
 const PORT = process.env.PORT || 8080;
 
@@ -152,9 +152,13 @@ app.get("/api/weatherForecast/lat/:lat/lon/:lon/", cors(), async (req, res) => {
     return res.status(400).send("lat or lon passed are not numbers");
 
   try {
+    console.log(`about to make axios call for the following url:https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${WeatherAPIkey}`);
     const results = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${WeatherAPIkey}`
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${WeatherAPIkey}`
     );
+
+    console.log(`axios get request results:`);
+    console.log({ results });
 
     ////THE SECTION BELLOW IS FOR CONVERTING AND FORMATTING THE DATA WE GOT FROM WEATHER API IN ORDER TO SEND THE RELEVANT DATA TO CLIENT (FRONT END)
 
@@ -281,9 +285,8 @@ app.get("/api/weatherForecast/lat/:lat/lon/:lon/", cors(), async (req, res) => {
 
     res.send(relevantData);
   } catch (err) {
-    console.log(err.response);
-    if (err.response.status === 429) {
-      console.log(`in 429 err`);
+    console.log({ err });
+    if (err.response && err.response.status && err.response.status === 429) {
       return res.status(err.response.status).json({
         data: {
           err: "429",
